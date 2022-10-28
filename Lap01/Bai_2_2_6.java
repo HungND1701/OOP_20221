@@ -12,7 +12,7 @@ public class Bai_2_2_6 {
         double b = keybord.nextDouble();
         double x = -b/a;
         System.out.println("x = "+x);
-        keybord.close();
+        
     }
     static void The_first_degree_equation_two(){
         Scanner keybord = new Scanner(System.in);
@@ -42,7 +42,7 @@ public class Bai_2_2_6 {
         if(D==0 &&Dx==0 &&Dy==0){
             System.out.println("Phuong trinh co vo so nghiem dang: "+a11+"*x1+"+a12+"*x2 = "+b1);
         }
-        keybord.close();
+        
     }
     static void The_second_degree_equation_one(){
         Scanner keybord = new Scanner(System.in);
@@ -59,6 +59,7 @@ public class Bai_2_2_6 {
         else {
             System.out.println("the equation have two solution: \n\tx1 = "+(-b+Math.sqrt(delta))/(2*a)+"\n\tx2 = "+(-b-Math.sqrt(delta))/(2*a));
         }
+        
     }
     static void menu(){
         System.out.println(("=============================="));
@@ -70,11 +71,13 @@ public class Bai_2_2_6 {
         System.out.println(("=============================="));
     }
     public static void main(String[] args) {
-        Scanner key= new Scanner(System.in);
-        String choose = "";
         
+        String choose = "";
+        while(!choose.equals("q")){
             menu();
-            choose = key.next();
+            Scanner key= new Scanner(System.in);
+            choose = key.nextLine();
+            
             switch(choose){
                 case "1":
                     The_first_degree_equation_one();
@@ -91,6 +94,7 @@ public class Bai_2_2_6 {
                 default: 
                     break;
             }
-        
+            
+        }
     }
 }
