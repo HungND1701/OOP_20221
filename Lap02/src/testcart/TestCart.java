@@ -13,8 +13,10 @@ public class TestCart {
 		
 		DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin","Animation",18.99f);
 		anOrder.addDigitalVideoDisc(dvd3);
-		
+	
 		//test 
 		anOrder.printCart();
+		anOrder.searchById(2);
+		anOrder.searchByTitle("Aladin");
 	}
 }
