@@ -2,7 +2,7 @@ package cart;
 import dvd.DigitalVideoDisc;
 
 public class Cart {
-	public static final int MAX_NUMBERS_ORDERED = 20;
+	private static final int MAX_NUMBERS_ORDERED = 20;
 	private int qtyOrdered = 0;
 	private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
 	
@@ -75,7 +75,7 @@ public class Cart {
 		}
 		System.out.println("The disc has been removed");
 	}
-	public  double totalCost(){
+	public double totalCost(){
 		double total=0;
 		for(DigitalVideoDisc DVD : itemsOrdered) {
 			total += DVD.getCost();
@@ -83,10 +83,9 @@ public class Cart {
 		return total;
 	}
 	public void printCart() {
-		double totalCost = 0;
+		double totalCost = this.totalCost();
 		for(int i = 0 ;i<qtyOrdered;i++) {
 			System.out.println(itemsOrdered[i].toString());
-			totalCost+=itemsOrdered[i].getCost();
 		}
 		System.out.printf("Total cost: %.2f $\n",totalCost);
 	}
