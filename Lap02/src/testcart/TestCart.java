@@ -1,9 +1,8 @@
-package aims;
+package testcart;
 import dvd.DigitalVideoDisc;
 import cart.Cart;
 
-
-public class Aims {
+public class TestCart {
 	public static void main(String[] args) {
 		Cart anOrder = new Cart();
 		DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King","Animation","Roger Allers",87,19.95f);
@@ -15,11 +14,7 @@ public class Aims {
 		DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin","Animation",18.99f);
 		anOrder.addDigitalVideoDisc(dvd3);
 		
-		anOrder.addDigitalVideoDisc(dvd3);
-		anOrder.removeDigitalVideoDisc(dvd3);
-		System.out.println(anOrder.getQtyOrdered());
-		
-		anOrder.displayCart();
-		
+		//test 
+		anOrder.printCart();
 	}
 }
