@@ -42,6 +42,11 @@ public class Store {
 		}
 		System.out.println("The DVD has been removed");
 	}
-	
+	public void printStore() {
+		for(int i = 0 ;i<qtyItemStore;i++) {
+			System.out.println(itemsInStore[i].toString());
+		}
+		
+	}
 	
 }
