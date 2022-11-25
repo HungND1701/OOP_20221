@@ -82,6 +82,14 @@ public class Cart {
 		}
 		return total;
 	}
+	public void printCart() {
+		double totalCost = 0;
+		for(int i = 0 ;i<qtyOrdered;i++) {
+			System.out.println(itemsOrdered[i].toString());
+			totalCost+=itemsOrdered[i].getCost();
+		}
+		System.out.printf("Total cost: %.2f $",totalCost);
+	}
 	public  void displayCart(){
 		for(int i = 0 ;i<qtyOrdered;i++) {
 			System.out.println("DVD "+(i+1));
