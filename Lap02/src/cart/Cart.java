@@ -2,7 +2,7 @@ package cart;
 import dvd.DigitalVideoDisc;
 
 public class Cart {
-	public static final int MAX_NUMBERS_ORDERED = 20;
+	private static final int MAX_NUMBERS_ORDERED = 20;
 	private int qtyOrdered = 0;
 	private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
 	
