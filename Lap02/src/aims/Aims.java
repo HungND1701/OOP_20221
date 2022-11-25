@@ -19,7 +19,7 @@ public class Aims {
 		anOrder.removeDigitalVideoDisc(dvd3);
 		System.out.println(anOrder.getQtyOrdered());
 		
-		anOrder.displayCart();
+		
 		
 	}
 }
