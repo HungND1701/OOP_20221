@@ -1,5 +1,5 @@
 package aims;
-import dvd.DigitalVideoDisc;
+import media.DigitalVideoDisc;
 import cart.Cart;
 
 

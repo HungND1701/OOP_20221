@@ -1,6 +1,6 @@
 package store;
 import java.util.*;
-import dvd.DigitalVideoDisc;
+import media.DigitalVideoDisc;
 public class Store {
 	private static final int MAX_NUMBERS_ITEM = 50;
 	private List<DigitalVideoDisc> itemsInStore = new ArrayList<DigitalVideoDisc>();

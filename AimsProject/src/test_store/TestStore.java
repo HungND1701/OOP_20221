@@ -1,6 +1,6 @@
 package test_store;
 import store.Store;
-import dvd.DigitalVideoDisc;
+import media.DigitalVideoDisc;
 public class TestStore {
 	public static void main(String[] args) {
 		Store anStore = new Store();

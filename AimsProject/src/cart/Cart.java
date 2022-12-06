@@ -1,5 +1,5 @@
 package cart;
-import dvd.DigitalVideoDisc;
+import media.DigitalVideoDisc;
 
 public class Cart {
 	private static final int MAX_NUMBERS_ORDERED = 20;
