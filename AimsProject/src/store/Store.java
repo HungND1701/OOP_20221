@@ -1,9 +1,9 @@
 package store;
-
+import java.util.*;
 import dvd.DigitalVideoDisc;
 public class Store {
 	private static final int MAX_NUMBERS_ITEM = 50;
-	private DigitalVideoDisc itemsInStore[] = new DigitalVideoDisc[MAX_NUMBERS_ITEM];
+	private List<DigitalVideoDisc> itemsInStore = new ArrayList<DigitalVideoDisc>();
 	private int qtyItemStore = 0;
 	
 	public  int getQtyItemStore() {
@@ -17,34 +17,26 @@ public class Store {
 			System.out.println("The store is almost full");
 			return;
 		}else {
-			itemsInStore[qtyItemStore] = disc;
+			itemsInStore.add(disc);
 			setQtyItemStore(qtyItemStore+1);
 			System.out.println("The store has been added ");
 		}
 	}
 	public  void removeDVD(DigitalVideoDisc disc){
-		if(itemsInStore == null ) {
+		if(itemsInStore.isEmpty() ) {
 			System.out.println("Store is empty ");
 			return;
 		}
-		
-		int i = 0;
-		while(i < qtyItemStore ) {
-			if(disc.equals(itemsInStore[i])) {
-				for(int j = i;j<qtyItemStore;j++) {
-					itemsInStore[j] = itemsInStore[j+1];
-				}
-				setQtyItemStore(qtyItemStore-1 );
-			}else {
-				i++;
-				continue;
+		for(int i = this.qtyItemStore; i >=0;i--) {
+			if(disc.equals(itemsInStore.get(i))) {
+				itemsInStore.remove(i);
 			}
 		}
 		System.out.println("The DVD has been removed");
 	}
 	public void printStore() {
-		for(int i = 0 ;i<qtyItemStore;i++) {
-			System.out.println(itemsInStore[i].toString());
+		for(int i = 0 ;i<itemsInStore.size();i++) {
+			System.out.println(itemsInStore.get(i).toString());
 		}
 		
 	}
