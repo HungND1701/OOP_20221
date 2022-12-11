@@ -1,6 +1,6 @@
 package media;
 
-public class Track {
+public class Track implements Playable{
 	
 	private String title;
 	private int length;
@@ -15,7 +15,13 @@ public class Track {
 		return length;
 	}
 
-
+	public boolean equal(Object o) {
+		if(o instanceof Track) {
+			return ((Track) o).getTitle() == this.getTitle() && ((Track) o).getLength() == this.getLength() ;
+		}else {
+			return false;
+		}
+	}
 	public Track() {
 		// TODO Auto-generated constructor stub
 	}
@@ -23,5 +29,8 @@ public class Track {
 		this.length = length;
 		this.title = title;
 	}
-
+	public void play() {
+		System.out.println("Playing Track: " + this.getTitle());
+		System.out.println("Track length: " + this.getLength());	
+	}
 }

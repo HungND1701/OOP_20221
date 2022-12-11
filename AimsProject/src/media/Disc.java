@@ -7,7 +7,7 @@ public class Disc extends Media{
 	public String getDirector() {
 		return director;
 	}
-
+	
 	public int getLength() {
 		return length;
 	}
@@ -19,5 +19,5 @@ public class Disc extends Media{
 		
 		// TODO Auto-generated constructor stub
 	}
-
+	
 }

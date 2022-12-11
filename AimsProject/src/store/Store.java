@@ -1,38 +1,27 @@
 package store;
 import java.util.*;
-import media.DigitalVideoDisc;
+import media.*;
 public class Store {
-	private static final int MAX_NUMBERS_ITEM = 50;
-	private List<DigitalVideoDisc> itemsInStore = new ArrayList<DigitalVideoDisc>();
-	private int qtyItemStore = 0;
+	private static final int MAX_NUMBERS_ITEM = 100;
+	private List<Media> itemsInStore = new ArrayList<Media>();
 	
-	public  int getQtyItemStore() {
-		return this.qtyItemStore;
-	}
-	private void setQtyItemStore(int qtyItemStore) {
-			this.qtyItemStore = qtyItemStore;
-	}
-	public  void addDVD(DigitalVideoDisc disc){
-		if(qtyItemStore == MAX_NUMBERS_ITEM) {
+	public  void addMedia(Media media){
+		if(itemsInStore.size() == MAX_NUMBERS_ITEM) {
 			System.out.println("The store is almost full");
 			return;
 		}else {
-			itemsInStore.add(disc);
-			setQtyItemStore(qtyItemStore+1);
-			System.out.println("The store has been added ");
+			itemsInStore.add(media);
+			System.out.println("The media has been added ");
 		}
 	}
-	public  void removeDVD(DigitalVideoDisc disc){
+	public Media removeMedia(Media media){
 		if(itemsInStore.isEmpty() ) {
 			System.out.println("Store is empty ");
-			return;
+			return null;
 		}
-		for(int i = this.qtyItemStore; i >=0;i--) {
-			if(disc.equals(itemsInStore.get(i))) {
-				itemsInStore.remove(i);
-			}
-		}
-		System.out.println("The DVD has been removed");
+		Media mda = itemsInStore.remove(itemsInStore.indexOf(media));
+		System.out.println("The media has been removed");
+		return mda;
 	}
 	public void printStore() {
 		for(int i = 0 ;i<itemsInStore.size();i++) {

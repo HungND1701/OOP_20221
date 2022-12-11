@@ -55,8 +55,14 @@ public abstract class Media {
 		this.cost = cost;
 	}
 
-
-
+	public boolean equal(Object o) {
+		if(o instanceof Media) {
+			return ((Media) o).getTitle() == this.getTitle();
+		}else {
+			return false;
+		}
+	}
+	
 	public Media() {
 		// TODO Auto-generated constructor stub
 	}
@@ -73,4 +79,5 @@ public abstract class Media {
 		Media.nbMedia +=1;
 		this.id = Media.nbMedia;
 	}
+	
 }

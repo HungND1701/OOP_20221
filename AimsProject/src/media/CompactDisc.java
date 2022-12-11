@@ -1,6 +1,6 @@
 package media;
 import java.util.*;
-public class CompactDisc extends Disc{
+public class CompactDisc extends Disc implements Playable{
 	private String artist;
 	private List<Track> tracks = new ArrayList<Track>();
 	public CompactDisc(String title, String category, float cost,String director,int length,String artist,List<Track> tracks) {
@@ -38,5 +38,12 @@ public class CompactDisc extends Disc{
 			sum_length += tr.getLength();
 		}
 		return sum_length;
+	}
+	public void play() {
+		System.out.println("Playing : " + this.getTitle());
+		System.out.println("Track length: " + this.getLength());	
+		for(Track tr:tracks) {
+			tr.play();
+		}
 	}
 }
