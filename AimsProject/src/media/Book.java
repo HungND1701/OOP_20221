@@ -5,8 +5,8 @@ public class Book extends Media{
 	
 	private List<String> authors = new ArrayList<String>();
 	
-	public Book(List<String> authors) {
-		super();
+	public Book(String title,List<String> authors) {
+		super(title);
 		this.authors = authors;
 	}
 
@@ -33,5 +33,7 @@ public class Book extends Media{
 			return true;
 		}
 	}
-	
+	public String toString() {
+		return ("Media-"+this.getId()+"-"+this.getTitle()+"-"+(this.getCategory()== null ? "no data" : this.getCategory())+": "+this.getCost()+"$");
+	}
 }

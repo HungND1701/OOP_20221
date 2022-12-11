@@ -1,22 +1,27 @@
 package testcart;
-import media.DigitalVideoDisc;
+import media.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import cart.Cart;
 
 public class TestCart {
 	public static void main(String[] args) {
-		Cart anOrder = new Cart();
-		DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King","Animation","Roger Allers",87,19.95f);
-		anOrder.addDigitalVideoDisc(dvd1);
+		List<Media> mediae = new ArrayList<Media>();
+		Book book1 = new Book("lol",new ArrayList<String>());
+//		String title, String category, float cost,String director,int length,String artist,List<Track> tracks
+		CompactDisc CD1 = new CompactDisc("CD","1",12.2f,"HUng",12,"asf",new ArrayList<Track>());
+//		String title, String category, float cost,String director,int length
+		DigitalVideoDisc DVD1 = new DigitalVideoDisc("DVD","asf",12.3f,"Hung",12);
 		
-		DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars","Science Fiction","George Lucas",87,24.95f);
-		anOrder.addDigitalVideoDisc(dvd2);
+		mediae.add(book1);
+		mediae.add(CD1);
+		mediae.add(DVD1);
 		
-		DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin","Animation",18.99f);
-		anOrder.addDigitalVideoDisc(dvd3);
-	
-		//test 
-		anOrder.printCart();
-		anOrder.searchById(2);
-		anOrder.searchByTitle("Aladin");
+		for(Media m : mediae) {
+			System.out.println(m.toString());
+		}
+		
 	}
 }

@@ -79,5 +79,5 @@ public abstract class Media {
 		Media.nbMedia +=1;
 		this.id = Media.nbMedia;
 	}
-	
+
 }
