@@ -1,13 +1,11 @@
-package test_store;
-import java.util.*;
-import store.Store;
+package media;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-import media.*;
-public class TestStore {
-	public static Book inputBook() {
+public class InputMedia {
+	public Book inputBook() {
 		String title = ""; String category = ""; float cost; 
 		List<String> authors = new ArrayList<String>();
 		
@@ -32,7 +30,7 @@ public class TestStore {
 		Book book = new Book(title,category,cost,authors);
 		return book;
 	}
-	public static DigitalVideoDisc inputDVD() {
+	public  DigitalVideoDisc inputDVD() {
 		//String title, String category, float cost,String director,int length
 		String title = ""; String category = ""; float cost; 
 		String director = ""; int length;
@@ -66,7 +64,7 @@ public class TestStore {
 		Track track = new Track(title,length);
 		return track;
 	}
-	public static CompactDisc inputCD() {
+	public  CompactDisc inputCD() {
 		//String title, String category, float cost,String director,int length,String artist,List<Track> tracks
 		String title = ""; String category = ""; float cost; 
 		String director = ""; int length = 0; String artist = "";
@@ -96,26 +94,5 @@ public class TestStore {
 		}
 		CompactDisc CD = new CompactDisc(title,category,cost,director,length,artist,tracks);
 		return CD;
-	}
-	public static void main(String[] args) {
-//		Store anStore = new Store();
-//		
-//		Book book1 = new Book("lol",new ArrayList<String>());
-////		String title, String category, float cost,String director,int length,String artist,List<Track> tracks
-//		CompactDisc CD1 = new CompactDisc("CD","1",12.2f,"HUng",12,"asf",new ArrayList<Track>());
-////		String title, String category, float cost,String director,int length
-//		DigitalVideoDisc DVD1 = new DigitalVideoDisc("DVD","asf",14.3f,"Hung",12);
-//		
-//		anStore.addMedia(DVD1);
-//		anStore.addMedia(CD1);
-//		anStore.addMedia(book1);
-//		
-//		anStore.printStore();
-//		Book book = inputBook();
-//		System.out.println(book.toString());
-//		CompactDisc CD = inputCD();
-//		System.out.println(CD.toString());
-		DigitalVideoDisc DVD = inputDVD();
-		System.out.println(DVD.toString());
 	}
 }

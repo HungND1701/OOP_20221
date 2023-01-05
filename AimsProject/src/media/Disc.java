@@ -16,8 +16,6 @@ public class Disc extends Media{
 		super(title,category,cost);
 		this.director = director;
 		this.length = length;
-		
-		// TODO Auto-generated constructor stub
 	}
 	
 }

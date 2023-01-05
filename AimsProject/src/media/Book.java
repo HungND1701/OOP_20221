@@ -9,11 +9,13 @@ public class Book extends Media{
 		super(title);
 		this.authors = authors;
 	}
-
+	public Book(String title, String category, float cost, List<String> authors) {
+		super(title,category,cost);
+		this.authors = authors;
+	}
 	public List<String> getAuthors() {
 		return authors;
 	}
-	
 	
 	public boolean addAuthor(String authorName) {
 		if(this.authors.contains(authorName)){

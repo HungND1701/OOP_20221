@@ -1,5 +1,5 @@
 package media;
-
+import java.util.*;
 public abstract class Media {
 	
 	private int id;
@@ -7,8 +7,11 @@ public abstract class Media {
 	private String category;
 	private float cost;
 	private static int nbMedia=0;
-
-
+	
+	public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
+	public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle();
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -79,5 +82,16 @@ public abstract class Media {
 		Media.nbMedia +=1;
 		this.id = Media.nbMedia;
 	}
-
+	public void MediaPlay(Media o) {
+		if(o instanceof CompactDisc) {
+			((CompactDisc) o).play();
+		}else 
+			if(o instanceof DigitalVideoDisc) {
+				((DigitalVideoDisc) o).play();
+			}else if(o instanceof Book ) {
+				System.out.println("Media's type is book. Can't play\n");
+			}
+			
+		
+	}
 }

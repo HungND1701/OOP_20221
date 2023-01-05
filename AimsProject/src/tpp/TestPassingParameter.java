@@ -1,5 +1,5 @@
 package tpp;
-import media.DigitalVideoDisc;
+import media.*;
 public class TestPassingParameter {
 	public static void main(String[] args) {
 		DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle");
